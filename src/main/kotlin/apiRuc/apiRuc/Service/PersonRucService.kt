@@ -11,11 +11,12 @@ class PersonRucService {
     @Autowired
     lateinit var personRucRepository: PersonRucRepository
 
-    fun list(numeroRuc:String): Optional<PersonRuc> {
-        return personRucRepository.findById(numeroRuc);
+    fun list(numeroRuc:String): List<PersonRuc> {
+        var hello=personRucRepository.findByNumeroRuc(numeroRuc);
+        return hello;
     }
 
-    fun listName(razonSocial:String): PersonRuc? {
+    fun listName(razonSocial:String): List<PersonRuc>? {
         return personRucRepository.findByRazonSocial(razonSocial);
     }
 }
