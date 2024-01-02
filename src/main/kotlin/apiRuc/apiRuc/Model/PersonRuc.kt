@@ -9,9 +9,9 @@ class PersonRuc {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null;
     @Column(name = "numero_ruc")
-    var numeroRuc: String? = null;
+    var numeroRuc: String = "N/A";
     @Column(name = "razon_social")
-    var razonSocial: String? = null;
+    var razonSocial: String = "N/A";
     @Column(name = "numero_establecimiento")
-    var numEstablecimiento: String?=null;
+    var numEstablecimiento: String="N/A";
 }
