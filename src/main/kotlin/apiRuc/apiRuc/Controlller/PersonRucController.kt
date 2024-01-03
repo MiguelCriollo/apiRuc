@@ -15,11 +15,15 @@ class PersonRucController {
 
     @GetMapping("/{id}")
     fun list(@PathVariable("id")numeroRuc:String):ResponseEntity<*>{
-        return ResponseEntity(personRucService.list(numeroRuc),HttpStatus.OK)
+        val response=personRucService.list(numeroRuc)
+        val status= if (response.isEmpty()) "Sucess" else "No Data"
+        return ResponseEntity.ok(mapOf("status" to status,"data" to response))
     }
 
     @GetMapping("/name/{name}")
     fun listName(@PathVariable("name")razonSocial:String):ResponseEntity<*>{
-        return ResponseEntity(personRucService.listName(razonSocial),HttpStatus.OK)
+        val response=personRucService.listName(razonSocial)
+        val status= if (response.isEmpty()) "Sucess" else "No Data"
+        return ResponseEntity.ok(mapOf("status" to status,"data" to response))
     }
 }
