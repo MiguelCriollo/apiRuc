@@ -7,16 +7,16 @@ import jakarta.persistence.*
 class PersonLC {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo")
+    @Column(name = "lic_codigo")
     var code: Long? = null;
 
-    @Column(name = "lc_identificacion")
+    @Column(name = "lic_identificacion")
     var identification:String="N/A";
 
-    @Column(name = "lc_tipo_lista")
+    @Column(name = "lic_apellido")
     var tipoLista:String="N/A";
 
-    @Column(name = "lc_nombres")
+    @Column(name = "lic_nombre")
     var name:String="N/A";
 
 }
